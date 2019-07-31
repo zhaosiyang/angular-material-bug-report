@@ -1,1 +1,81 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+@import '~@angular/material/theming';
+@include mat-core();
+
+:root {
+  --theme-primary-50: red;
+  --theme-primary-100: red;
+  --theme-primary-200: red;
+  --theme-primary-300: red;
+  --theme-primary-400: red;
+  --theme-primary-500: red;
+  --theme-primary-600: red;
+  --theme-primary-700: red;
+  --theme-primary-800: red;
+  --theme-primary-900: red;
+  --theme-primary-A100: red;
+  --theme-primary-A200: red;
+  --theme-primary-A400: red;
+  --theme-primary-A700: red;
+
+  --theme-primary-contrast-50: white;
+  --theme-primary-contrast-100: white;
+  --theme-primary-contrast-200: white;
+  --theme-primary-contrast-300: white;
+  --theme-primary-contrast-400: white;
+  --theme-primary-contrast-500: white;
+  --theme-primary-contrast-600: white;
+  --theme-primary-contrast-700: white;
+  --theme-primary-contrast-800: white;
+  --theme-primary-contrast-900: white;
+  --theme-primary-contrast-A100: white;
+  --theme-primary-contrast-A200: white;
+  --theme-primary-contrast-A400: white;
+  --theme-primary-contrast-A700: white;
+}
+
+$dynamic-theme-primary: (
+  50 : var(--theme-primary-50),
+  100 : var(--theme-primary-100),
+  200 : var(--theme-primary-200),
+  300 : var(--theme-primary-300),
+  400 : var(--theme-primary-400),
+  500 : var(--theme-primary-500),
+  600 : var(--theme-primary-600),
+  700 : var(--theme-primary-700),
+  800 : var(--theme-primary-800),
+  900 : var(--theme-primary-900),
+  A100 : var(--theme-primary-A100),
+  A200 : var(--theme-primary-A200),
+  A400 : var(--theme-primary-A400),
+  A700 : var(--theme-primary-A700),
+  contrast: (
+    50: var(--theme-primary-contrast-50),
+    100: var(--theme-primary-contrast-100),
+    200: var(--theme-primary-contrast-200),
+    300: var(--theme-primary-contrast-300),
+    400: var(--theme-primary-contrast-400),
+    500: var(--theme-primary-contrast-500),
+    600: var(--theme-primary-contrast-600),
+    700: var(--theme-primary-contrast-700),
+    800: var(--theme-primary-contrast-800),
+    900: var(--theme-primary-contrast-900),
+    A100: var(--theme-primary-contrast-A100),
+    A200: var(--theme-primary-contrast-A200),
+    A400: var(--theme-primary-contrast-A400),
+    A700: var(--theme-primary-contrast-A700),
+  )
+);
+
+$app-theme: mat-light-theme(mat-palette($dynamic-theme-primary), mat-palette($mat-pink), mat-palette($mat-red));
+@include angular-material-theme($app-theme);
